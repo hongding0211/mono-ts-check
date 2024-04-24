@@ -1,0 +1,27 @@
+{
+  "name": "@hong97/mono-ts-check",
+  "version": "0.0.17",
+  "author": "hongding",
+  "main": "index.js",
+  "bin": {
+    "mono-ts-check": "./src/index.js"
+  },
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "bump": "bump",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "dependencies": {
+    "chalk": "^4",
+    "minimatch": "^9.0.3"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^14",
+    "nbump": "^1.5.9",
+    "prettier": "^3.1.0",
+    "typescript": "^5.2.2"
+  }
+}
