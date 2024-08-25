@@ -1,8 +1,34 @@
-**Work with [lint-staged](https://github.com/lint-staged/lint-staged), run tsc on staged files and output the result of staged-only files.**
+**Providing a progressive way to execute a TypeScript check.**
 
-**ONLY TESTED ON TYPESCRIPT 5**
+## Why?
+
+Many people use `tsc` with `lint-staged` to execute a TypeScript check during the commit stage. It works well in most cases.
+
+But consider the following situation:
+```ts
+// a.ts
+export const obj = {}
+console.log(obj.foo)  // foo does not exist on obj
+```
+
+```ts
+// b.ts
+import { obj } from ./a
+```
+
+If you run `tsc` on `b.ts`, it will appear that `b.ts` contains no TypeScript errors. However, you won’t pass the TypeScript check because another error occurred in `a.ts`.
+
+Your project may contain a large number of errors. In this case, it may be impossible to fix all of them during a single commit. Or put another way, you only care about the errors in specific files and want to ignore all other potential errors in other files.
+
+This tool provides a gentler way to solve this problem.
+
+Instead of using `tsc`, this tool only outputs errors based on the files you provide. 
+
+So here, if you run `mono-ts-check` on `b.ts`, you won’t get any errors.
 
 ## Setup
+
+> **ONLY TESTED ON TYPESCRIPT 5**
 
 - Install [lint-staged](https://github.com/lint-staged/lint-staged), follow the instructions.
 
