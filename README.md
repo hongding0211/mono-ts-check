@@ -1,6 +1,6 @@
 **Work with [lint-staged](https://github.com/lint-staged/lint-staged), run tsc on staged files and output the result of staged-only files.**
 
-** ONLY TESTED ON TYPESCRIPT 5**
+**ONLY TESTED ON TYPESCRIPT 5**
 
 ## Setup
 
