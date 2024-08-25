@@ -13,7 +13,7 @@ console.log(obj.foo)  // foo does not exist on obj
 
 ```ts
 // b.ts
-import { obj } from ./a
+import { obj } from './a'
 ```
 
 If you run `tsc` on `b.ts`, it will appear that `b.ts` contains no TypeScript errors. However, you won’t pass the TypeScript check because another error occurred in `a.ts`.
